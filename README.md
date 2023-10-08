@@ -1,4 +1,4 @@
-![logo-no-background](https://github.com/oheenrahman81/FindMyHalal/assets/69548209/e44b7e65-5a68-4a8a-9b0f-f0ddba9472d4)
+![resized_logo-white](https://github.com/oheenrahman81/FindMyHalal/assets/69548209/7712f838-af5e-4b42-a302-92dc36ff7000)
 
 # FindMyHalal
 
