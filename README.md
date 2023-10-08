@@ -10,7 +10,7 @@ Website is currently hosted at: https://findmyhalal.w3spaces.com/
 
 The domain "findmyhalal.com" is currently privately owned and does not seem to be in use.
 
-FindMyHalal Website (THE VIDEO'S ARE JUST THERE FOR FILLERS):
+FindMyHalal Website (videos are jsut fillers):
 
 <img width="1680" alt="Homepage" src="https://github.com/oheenrahman81/FindMyHalal/assets/69548209/d64200a7-8cf6-4fea-8d50-256865305cda">
 <img width="1680" alt="Restaurant Page" src="https://github.com/oheenrahman81/FindMyHalal/assets/69548209/3471c36f-eed8-4b00-9734-207dd334dfc4">
