@@ -1,8 +1,6 @@
 # FindMyHalal
 
-This website uses:
-  Google Adsense
-  AirTable Developer API
+This website uses; Google Adsense, AirTable Developer API
   
 AirTable APIKEY and BASEID must be regenerated for security purposes.
 
