@@ -18,5 +18,7 @@ FindMyHalal Website (THE VIDEO'S ARE JUST THERE FOR FILLERS):
 <img width="1680" alt="About Us Page" src="https://github.com/oheenrahman81/FindMyHalal/assets/69548209/ff7f001d-5324-45d6-b474-2a34c0978150">
 <img width="1680" alt="Contact Page" src="https://github.com/oheenrahman81/FindMyHalal/assets/69548209/2923c445-f82c-4d6f-b3da-9e9fad1ed8b0">
 
+# AirTable
+
 AirTable Restaurant Table (Follow exact format):
 <img width="1680" alt="Restaurant Table" src="https://github.com/oheenrahman81/FindMyHalal/assets/69548209/f69f5fc9-2c00-4f86-904b-3a6d91f3f4ec">
