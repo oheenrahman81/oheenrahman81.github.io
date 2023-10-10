@@ -51,7 +51,7 @@ function displayData(records) {
         const namePara = document.createElement('h2');
         namePara.textContent = record.fields.Name;
 
-        // Cuisin
+        // Cuisine
         const cuisinePara = document.createElement('p');
         cuisinePara.textContent = 'Cuisine: ' + record.fields.Cuisine.join(', ');
         
@@ -81,7 +81,7 @@ function displayData(records) {
         });
 
         // Phone Numbers
-        const phoneNumPara = document.createElement('p');
+        const phoneNumPara = document.createElement('a');
         phoneNumPara.textContent = record.fields.PhoneNumber;
 
         dataItem.appendChild(namePara);

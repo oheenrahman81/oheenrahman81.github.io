@@ -1,0 +1,61 @@
+/* Header */
+header {
+    background-color: #030101;
+    color: #fff;
+    padding: 20px 0px 50px; 
+}
+
+nav ul {
+    list-style: none; /* Removes Bullet Points */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; 
+    margin-right: 20px; 
+}
+
+nav ul li a {
+    text-decoration: none; /* Removes Underlines from Links */
+    color: #fff; 
+    font-weight: bold; 
+    transition: color 0.3s; /
+}
+
+nav ul li a:hover {
+    color: #5fbd3a; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns per row */
+    gap: 20px; /* Adjust the horizontal spacing between items */
+    justify-items: center; /* Center items horizontally within the cell */
+    align-items: center; /* Center items vertically within the cell */
+    margin: 0 auto; /* Center the grid horizontally */
+}
+
+.data-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center; /* Center content horizontally */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Add space between rows */
+}
+
+footer {
+    margin: 25px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
