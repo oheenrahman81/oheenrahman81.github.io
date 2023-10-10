@@ -1,7 +1,7 @@
 /* Header Styles */
 header {
-    background-color: #030101;
-    color: #fff;
+    background-color: black;
+    color: whitesmoke;
     padding: 20px 0px 20px;
 }
 
@@ -21,7 +21,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: white;
     font-size: 20px;
     font-weight: bold;
     transition: color 0.3s;
@@ -41,12 +41,41 @@ nav ul li a.hidden {
 
 /* Body Styles */
 body {
-    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    font-family: 'Fira Sans Extra Condensed';
     text-align: center;
 }
 
 h1 {
     color: #333;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#restaurant-search{
+    width: 33%;
+}
+
+.maintenance-message{
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.maintenance-message #welcome{
+    font-size: 80px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.maintenance-message #message {
+    font-size: 25px;
+    color: #666;
 }
 
 /* Filter Box Styles */
@@ -55,12 +84,11 @@ h1 {
 }
 
 /* Restaurant Grid Item Styles */
-/* Restaurant Grid Item Styles */
 .data-item {
     border: 1px solid #ddd;
     padding: 10px;
-    width: 30%;
-    margin: 10px auto; /* Center-align grid items horizontally */
+    width: calc(30% - 20px); /* Adjusted width to include spacing between columns */
+    margin: 10px; /* Add space between columns */
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
@@ -96,7 +124,7 @@ h1 {
 }
 
 .visit-button:hover {
-    background-color: #0056b3;
+    color: #5fbd3a;
 }
 
 /* Menu Button Styles */
@@ -112,17 +140,10 @@ h1 {
 }
 
 .menu-button:hover {
-    background-color: #1E7E34;
+    color: #5fbd3a;
 }
 
 /* Reserve Now Button Styles */
-.reserve-button {
-    background-color: black;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+.reserve-button:hover {
+    color: #5fbd3a;
 }

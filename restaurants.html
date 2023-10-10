@@ -21,7 +21,7 @@
         <header>
             <nav align="right">
                 <ul>
-                    <li><a class="hidden" href="status.html">Status</a></li>
+                    <li><a class="hidden" href="hidden.html">Hidden</a></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a class="active" href="restaurants.html">Restaurants</a></li>
                     <li><a href="requests.html">Requests</a></li>
@@ -31,23 +31,28 @@
             </nav>
         </header>
         <h1 align="center">Restaurants</h1>
-        <div id="filterBox">
+        <div align="center" id="filterBox">
+            <div align="center" id="search-bar">
+                <input align="center" type="text" id="restaurant-search" placeholder="Search Restaurant Name">
+            </div>
+            <label for="sort-order">Sort Order:</label>
+            <select id="sort-order">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
             <!-- Filter Options for Cuisine -->
-        <label for="cuisine-filter">Filter by Cuisine:</label>
-        <select id="cuisine-filter">
-            <!-- Filter options will be populated here -->
-        </select>
-
-        <!-- Filter Options for Religious Allowance -->
-        <label for="religious-filter">Filter by Religious Allowance:</label>
-        <select id="religious-filter">
-            <!-- Filter options will be populated here -->
-        </select>
+            <label for="cuisine-filter">Cuisine:</label>
+            <select id="cuisine-filter">
+                <!-- Filter options will be populated here -->
+            </select>
+            <!-- Filter Options for Religious Allowance -->
+            <label for="religious-filter">Religious Allowance:</label>
+            <select id="religious-filter">
+                <!-- Filter options will be populated here -->
+            </select>
+            <div id="data-container" class="restaurant-grid">
+                <!-- Restaurant items will be dynamically added here -->
         </div>
-        <div id="data-container" class="restaurant-grid">
-            <!-- Restaurant items will be dynamically added here -->
-        </div>
-
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </body>
 </html>

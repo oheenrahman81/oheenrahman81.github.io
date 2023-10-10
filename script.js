@@ -1,10 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetchAirtableData();
+    // Get references to the filter select elements
+    const cuisineFilter = document.getElementById('cuisine-filter');
+    const religiousFilter = document.getElementById('religious-filter');
+    const sortDropdown = document.getElementById('sort-order'); // Get reference to the sorting dropdown
+
+    // Store selected options
+    const selectedFilters = {
+        cuisine: '',
+        religious: '',
+        restaurantName: '', // Added restaurantName filter
+    };
+
+    // Listen for changes in the cuisine filter
+    cuisineFilter.addEventListener('change', function () {
+        selectedFilters.cuisine = cuisineFilter.value;
+        applyFilters(selectedFilters);
+    });
+
+    // Listen for changes in the religious filter
+    religiousFilter.addEventListener('change', function () {
+        selectedFilters.religious = religiousFilter.value;
+        applyFilters(selectedFilters);
+    });
+
+    // Get reference to the restaurant search input
+    const restaurantSearchInput = document.getElementById('restaurant-search');
+
+    // Listen for input changes in the search bar
+    restaurantSearchInput.addEventListener('input', function () {
+        selectedFilters.restaurantName = restaurantSearchInput.value;
+        applyFilters(selectedFilters);
+    });
+
+    // Add a default "Select" option to the sort dropdown
+    sortDropdown.innerHTML = '<option value="select" selected>Select</option><option value="asc">Ascending</option><option value="desc">Descending</option>';
+
+    // Listen for changes in the sort dropdown
+    sortDropdown.addEventListener('change', function () {
+        const sortOrder = sortDropdown.value;
+        if (sortOrder !== 'select') {
+            sortRestaurants(sortOrder);
+        }
+    });
+
+    // Fetch restaurant data and apply filters
+    fetchAirtableData(selectedFilters);
 });
 
+let restaurantData = []; // Store the fetched restaurant data
+
 function fetchAirtableData() {
-    const apiKey = 'patDhsVHaMssP2aVE.98b7103d478263587370cf4f3c1cc61fa091bc7245b8fde004327092be767e65';
-    const baseId = 'appxoKr26iK85ENqi';
+    const apiKey = 'patDhsVHaMssP2aVE.98b7103d478263587370cf4f3c1cc61fa091bc7245b8fde004327092be767e65'; // Replace with your Airtable API Key
+    const baseId = 'appxoKr26iK85ENqi'; // Replace with your Airtable Base ID
     const table = 'Restaurant';
 
     const apiUrl = `https://api.airtable.com/v0/${baseId}/${table}`;
@@ -16,16 +63,19 @@ function fetchAirtableData() {
     })
         .then(response => response.json())
         .then(data => {
+            // Store the fetched data in the restaurantData array
+            restaurantData = data.records;
+
             // Extract unique cuisines and religious allowances
-            const uniqueCuisines = [...new Set(data.records.map(record => record.fields.Cuisine).flat())];
-            const uniqueReligiousAllowances = [...new Set(data.records.map(record => record.fields['Religious Allowance']))];
+            const uniqueCuisines = [...new Set(restaurantData.map(record => record.fields.Cuisine).flat())];
+            const uniqueReligiousAllowances = [...new Set(restaurantData.map(record => record.fields['Religious Allowance']))];
 
             // Populate filter options
             populateFilterOptions(uniqueCuisines, 'cuisine-filter');
             populateFilterOptions(uniqueReligiousAllowances, 'religious-filter');
 
             // Display restaurant data
-            displayData(data.records);
+            displayData(restaurantData);
         })
         .catch(error => {
             console.error('Error fetching data from Airtable:', error);
@@ -53,23 +103,35 @@ function populateFilterOptions(options, filterId) {
     });
 }
 
+function applyFilters(selectedFilters) {
+    // Filter the records based on user selections
+    const filteredRecords = filterData(selectedFilters);
+
+    // Display the filtered data
+    displayData(filteredRecords);
+}
+
+function filterData(selectedFilters) {
+    // Perform the filtering based on selected values
+    return restaurantData.filter(record => {
+        const cuisineMatch = selectedFilters.cuisine === '' || record.fields.Cuisine.includes(selectedFilters.cuisine);
+        const religiousMatch = selectedFilters.religious === '' || record.fields['Religious Allowance'] === selectedFilters.religious;
+        const restaurantNameMatch = !selectedFilters.restaurantName || record.fields.Name.toLowerCase().includes(selectedFilters.restaurantName.toLowerCase());
+        return cuisineMatch && religiousMatch && restaurantNameMatch;
+    });
+}
 
 function displayData(records) {
     const dataContainer = document.getElementById('data-container');
-    let currentRow = null;
-    records.forEach((record, index) => {
-        // Create a new row for every third restaurant
-        if (index % 3 === 0) {
-            currentRow = document.createElement('div');
-            currentRow.className = 'row';
-            dataContainer.appendChild(currentRow);
-        }
+    dataContainer.innerHTML = ''; // Clear existing data
 
+    records.forEach(record => {
+        // Create a data item element
         const dataItem = document.createElement('div');
         dataItem.className = 'data-item';
 
         // Check if the Logo field is not empty
-        if (record.fields.Logo[0] && record.fields.Logo[0]) {
+        if (record.fields.Logo && record.fields.Logo[0]) {
             // Create an img element for the Logo field
             const logoImg = document.createElement('img');
             logoImg.src = record.fields.Logo[0].url;
@@ -89,18 +151,18 @@ function displayData(records) {
         const cuisinePara = document.createElement('p');
         cuisinePara.textContent = 'Cuisine: ' + record.fields.Cuisine.join(', ');
 
-        // Descriptions
+        // Description
         const descriptionPara = document.createElement('p');
         descriptionPara.textContent = record.fields.Description;
 
-        // Addy
+        // Address
         const addressPara = document.createElement('p');
         addressPara.textContent = record.fields.Address;
 
         // Phone Numbers
         const phoneNumPara = document.createElement('a');
         phoneNumPara.textContent = record.fields.PhoneNumber;
-        phoneNumPara.href = 'tel: ' + record.fields.PhoneNumber;
+        phoneNumPara.href = 'tel:' + record.fields.PhoneNumber;
 
         // Create a button container
         const buttonContainer = document.createElement('div');
@@ -156,7 +218,28 @@ function displayData(records) {
         dataItem.appendChild(phoneNumPara);
         dataItem.appendChild(buttonContainer);
 
-        // Append the dataItem to the current row
-        currentRow.appendChild(dataItem);
+        // Append the dataItem to the dataContainer
+        dataContainer.appendChild(dataItem);
     });
+}
+
+// Sorting Functionality
+function sortRestaurants(order) {
+    restaurantData.sort((a, b) => {
+        const nameA = a.fields.Name.toLowerCase();
+        const nameB = b.fields.Name.toLowerCase();
+
+        if (order === 'asc') {
+            if (nameA < nameB) return -1;
+            if (nameA > nameB) return 1;
+        } else {
+            if (nameA > nameB) return -1;
+            if (nameA < nameB) return 1;
+        }
+
+        return 0;
+    });
+
+    // Display the sorted data
+    displayData(restaurantData);
 }
