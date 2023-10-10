@@ -65,30 +65,12 @@ body {
     font-size: 25px;
 }
 
-.maintenance-message{
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.maintenance-message #welcome{
-    font-size: 80px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.maintenance-message #message {
-    font-size: 25px;
-    color: #666;
-}
-
 #welcome {
     text-align: center;
     font-size: 50px;
 }
 
-#messages {
+#message {
     text-align: center;
     font-size: 25px;
 }
