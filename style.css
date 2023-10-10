@@ -1,36 +1,45 @@
-/* Header */
+/* Header Styles */
 header {
     background-color: #030101;
     color: #fff;
-    padding: 20px 0px 20px; 
+    padding: 20px 0px 20px;
 }
 
-#fmh_logo{
+#fmh_logo {
     padding: 2px;
 }
 
 nav ul {
-    list-style: none; /* Removes Bullet Points */
+    list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline; 
-    margin-right: 20px; 
+    display: inline;
+    margin-right: 20px;
 }
 
 nav ul li a {
-    text-decoration: none; /* Removes Underlines from Links */
-    color: #fff; 
+    text-decoration: none;
+    color: #fff;
     font-size: 20px;
-    font-weight: bold; 
-    transition: color 0.3s; /
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #5fbd3a; 
+    color: #5fbd3a;
 }
 
+nav ul li a.active {
+    color: #5fbd3a;
+}
+
+nav ul li a.hidden {
+    color: black;
+}
+
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -40,20 +49,80 @@ h1 {
     color: #333;
 }
 
-.restaurant-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns per row */
-    gap: 20px; /* Adjust the horizontal spacing between items */
-    justify-items: center; /* Center items horizontally within the cell */
-    align-items: center; /* Center items vertically within the cell */
-    margin: 0 auto; /* Center the grid horizontally */
+/* Filter Box Styles */
+#filterBox {
+    padding-bottom: 25px;
 }
 
+/* Restaurant Grid Item Styles */
+/* Restaurant Grid Item Styles */
 .data-item {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     padding: 10px;
-    background-color: #f9f9f9;
-    text-align: center; /* Center content horizontally */
+    width: 30%;
+    margin: 10px auto; /* Center-align grid items horizontally */
+    display: inline-block;
+    vertical-align: top;
     box-sizing: border-box;
-    margin-bottom: 20px; /* Add space between rows */
+    min-height: 400px;
+}
+
+.restaurant-grid {
+    text-align: center; /* Center-align grid items horizontally */
+}
+
+/* Button Container Styles */
+.button-container {
+    padding: 10px;
+    display: flex; /* Use flexbox to align buttons next to each other */
+    gap: 10px; /* Add spacing between buttons */
+    justify-content: center; /* Center-align buttons horizontally */
+    margin-top: auto; /* Push buttons to the bottom of the grid item */
+}
+
+/* Visit Now Button Styles */
+.visit-button,
+.menu-button,
+.reserve-button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make buttons fill the available width */
+}
+
+.visit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Menu Button Styles */
+.menu-button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #1E7E34;
+}
+
+/* Reserve Now Button Styles */
+.reserve-button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }

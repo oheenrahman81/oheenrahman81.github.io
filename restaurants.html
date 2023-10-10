@@ -21,18 +21,33 @@
         <header>
             <nav align="right">
                 <ul>
+                    <li><a class="hidden" href="status.html">Status</a></li>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="restaurants.html">Restaurants</a></li>
+                    <li><a class="active" href="restaurants.html">Restaurants</a></li>
                     <li><a href="requests.html">Requests</a></li>
-                    <li><a href="aboutus.html">About-Us</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <h1 align="center">Restaurants</h1>
+        <div id="filterBox">
+            <!-- Filter Options for Cuisine -->
+        <label for="cuisine-filter">Filter by Cuisine:</label>
+        <select id="cuisine-filter">
+            <!-- Filter options will be populated here -->
+        </select>
+
+        <!-- Filter Options for Religious Allowance -->
+        <label for="religious-filter">Filter by Religious Allowance:</label>
+        <select id="religious-filter">
+            <!-- Filter options will be populated here -->
+        </select>
+        </div>
         <div id="data-container" class="restaurant-grid">
             <!-- Restaurant items will be dynamically added here -->
         </div>
+
         <script src="script.js"></script>
     </body>
 </html>
