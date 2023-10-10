@@ -83,6 +83,16 @@ body {
     color: #666;
 }
 
+#welcome {
+    text-align: center;
+    font-size: 50px;
+}
+
+#messages {
+    text-align: center;
+    font-size: 25px;
+}
+
 /* Filter Box Styles */
 #filterBox {
     padding-bottom: 25px; 
