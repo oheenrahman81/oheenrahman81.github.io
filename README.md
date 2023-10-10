@@ -3,7 +3,7 @@ This website uses; Google Adsense, AirTable Developer API
 
 AirTable APIKEY and BASEID must be regenerated for security purposes.
 
-Website is currently hosted at: https://findmyhalal.w3spaces.com/
+Website is currently hosted at: https://oheenrahman81.github.io/
 
 The domain "findmyhalal.com" is currently privately owned and does not seem to be in use.
 
