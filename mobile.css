@@ -1,0 +1,49 @@
+/* Add this CSS for mobile devices */
+@media screen and (max-width: 600px) {
+    /* Adjust styles for screens with a width of 600px or less */
+    header {
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    #restaurant-search {
+        font-size: 16px;
+    }
+
+    #welcome {
+        font-size: 24px;
+    }
+
+    #message {
+        font-size: 14px;
+    }
+
+    #filterBox {
+        padding-bottom: 10px;
+    }
+
+    .data-item {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 100%; /* Make grid items full width on mobile */
+        margin: 10px 0; /* Add spacing above and below grid items on mobile */
+        display: block; /* Change to a block layout for mobile */
+        box-sizing: border-box;
+        min-height: auto; /* Reset min-height for mobile */
+    }
+
+    .restaurant-grid {
+        text-align: center;
+    }
+
+    .button-container {
+        margin: 5px 0;
+    }
+}
