@@ -1,7 +1,7 @@
 /* Header Styles */
 header {
     background-color: black;
-    color: whitesmoke;
+    color: #f5f5f5;
     padding: 20px 0px;
 }
 
@@ -105,10 +105,22 @@ body {
     margin-top: auto; /* Push buttons to the bottom of the grid item */
 }
 
+#pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: auto;
+}
+
+#pagination button {
+    font-size: 14px; /* Reduce the font size to make the text smaller */
+    padding: 5px 10px; /* Reduce the padding to make the button smaller */
+    width: 80px; /* Set a specific width for the button */
+    height: 40px; /* Set a specific height for the button */
+}
+
 /* Visit Now Button Styles */
-.visit-button,
-.menu-button,
-.reserve-button {
+.visit-button, .menu-button, .reserve-button, .previous-button, .page-button, .next-button {
     background-color: black;
     color: #fff;
     padding: 10px 20px;
@@ -120,28 +132,7 @@ body {
     width: 100%; /* Make buttons fill the available width */
 }
 
-.visit-button:hover {
-    color: #5fbd3a;
-}
-
-/* Menu Button Styles */
-.menu-button {
-    background-color: black;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.menu-button:hover {
-    color: #5fbd3a;
-}
-
-/* Reserve Now Button Styles */
-.reserve-button:hover {
+.visit-button:hover, .menu-button:hover, .reserve-button:hover, .previous-button:hover, .page-button:hover, .next-button:hover {
     color: #5fbd3a;
 }
 

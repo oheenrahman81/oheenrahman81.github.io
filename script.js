@@ -227,6 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const previousButton = document.createElement('button');
         previousButton.textContent = 'Previous';
+        previousButton.className = 'previous-button';
         previousButton.addEventListener('click', () => {
             if (currentPage > 1) {
                 currentPage--;
@@ -240,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 1; i <= totalPages; i++) {
             const pageButton = document.createElement('button');
             pageButton.textContent = i;
+            pageButton.className = 'page-button';
             pageButton.addEventListener('click', () => {
                 currentPage = i;
                 displayData(restaurantData, currentPage, itemsPerPage);
@@ -251,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const nextButton = document.createElement('button');
         nextButton.textContent = 'Next';
+        nextButton.className = 'next-button';
         nextButton.addEventListener('click', () => {
             if (currentPage < totalPages) {
                 currentPage++;
