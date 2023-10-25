@@ -144,3 +144,43 @@ body {
 .reserve-button:hover {
     color: #5fbd3a;
 }
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 600px) {
+    /* Adjust styles for screens with a width of 600px or less */
+    header {
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    #restaurant-search {
+        font-size: 16px;
+    }
+
+    #welcome {
+        font-size: 24px;
+    }
+
+    #message {
+        font-size: 14px;
+    }
+
+    #filterBox {
+        padding-bottom: 10px;
+    }
+
+    .data-item {
+        margin: 10px 0;
+    }
+
+    .button-container {
+        margin: 5px 0;
+    }
+}
