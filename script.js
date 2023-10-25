@@ -221,82 +221,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createPagination(currentPage, totalPages) {
         const paginationContainer = document.getElementById('pagination');
-
+    
         if (paginationContainer) {
             paginationContainer.innerHTML = '';
-
+    
             const previousButton = document.createElement('button');
             previousButton.textContent = 'Previous';
             previousButton.addEventListener('click', () => {
                 if (currentPage > 1) {
                     currentPage--;
                     displayData(restaurantData, currentPage, itemsPerPage);
+                    scrollToTop();
                 }
             });
-
+    
             paginationContainer.appendChild(previousButton);
-
+    
             for (let i = 1; i <= totalPages; i++) {
                 const pageButton = document.createElement('button');
                 pageButton.textContent = i;
                 pageButton.addEventListener('click', () => {
                     currentPage = i;
                     displayData(restaurantData, currentPage, itemsPerPage);
+                    scrollToTop();
                 });
-
+    
                 paginationContainer.appendChild(pageButton);
             }
-
+    
             const nextButton = document.createElement('button');
             nextButton.textContent = 'Next';
             nextButton.addEventListener('click', () => {
                 if (currentPage < totalPages) {
                     currentPage++;
                     displayData(restaurantData, currentPage, itemsPerPage);
+                    scrollToTop();
                 }
             });
-
+    
             paginationContainer.appendChild(nextButton);
         }
     }
-    function createPagination(currentPage, totalPages) {
-        const paginationContainer = document.getElementById('pagination2');
-
-        if (paginationContainer) {
-            paginationContainer.innerHTML = '';
-
-            const previousButton = document.createElement('button');
-            previousButton.textContent = 'Previous';
-            previousButton.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    displayData(restaurantData, currentPage, itemsPerPage);
-                }
-            });
-
-            paginationContainer.appendChild(previousButton);
-
-            for (let i = 1; i <= totalPages; i++) {
-                const pageButton = document.createElement('button');
-                pageButton.textContent = i;
-                pageButton.addEventListener('click', () => {
-                    currentPage = i;
-                    displayData(restaurantData, currentPage, itemsPerPage);
-                });
-
-                paginationContainer.appendChild(pageButton);
-            }
-
-            const nextButton = document.createElement('button');
-            nextButton.textContent = 'Next';
-            nextButton.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    displayData(restaurantData, currentPage, itemsPerPage);
-                }
-            });
-
-            paginationContainer.appendChild(nextButton);
-        }
+    
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scrolls to the top smoothly
     }
+    
 });
