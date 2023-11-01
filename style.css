@@ -63,6 +63,7 @@ body {
 #restaurant-search{
     width: 33%;
     font-size: 25px;
+    text-align: center;
 }
 
 #welcome {
@@ -152,7 +153,8 @@ body {
     }
 
     #restaurant-search {
-        font-size: 16px;
+        font-size: 15px;
+        text-align: center;
     }
 
     #welcome {
