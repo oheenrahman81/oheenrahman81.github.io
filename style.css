@@ -71,9 +71,37 @@ body {
     font-size: 50px;
 }
 
-#message {
-    text-align: left;
+.message {
+    text-align: center;
     font-size: 25px;
+}
+
+.message-container {
+    max-width: 80%; /* Limit the width of the message container */
+    margin: 0 auto; /* Center the message container horizontally */
+    padding: 20px; /* Add padding for spacing */
+}
+
+#stateList ul {
+    list-style: none;
+    padding: 0;
+}
+
+#stateList ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#stateList ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#stateList ul li a:hover {
+    color: #5fbd3a;
 }
 
 /* Filter Box Styles */
@@ -121,7 +149,7 @@ body {
 }
 
 /* Visit Now Button Styles */
-.visit-button, .menu-button, .reserve-button, .previous-button, .page-button, .next-button, #requestsRedirect, #certificationRedirect{
+.visit-button, .menu-button, .reserve-button, .previous-button, .page-button, .next-button, #requestsRedirect, #certificationRedirect, #stateButton{
     background-color: black;
     color: #fff;
     padding: 10px 20px;
@@ -133,7 +161,7 @@ body {
     width: 100%; /* Make buttons fill the available width */
 }
 
-.visit-button:hover, .menu-button:hover, .reserve-button:hover, .previous-button:hover, .page-button:hover, .next-button:hover, #requestsRedirect:hover, #certificationRedirect:hover {
+.visit-button:hover, .menu-button:hover, .reserve-button:hover, .previous-button:hover, .page-button:hover, .next-button:hover, #requestsRedirect:hover, #certificationRedirect:hover, #stateButton:hover {
     color: #5fbd3a;
 }
 
@@ -145,9 +173,14 @@ body {
 
 /* Apply the styles to the specific buttons */
 #requestsRedirect.small-width-button,
-#certificationRedirect.small-width-button {
+#certificationRedirect.small-width-button, #stateButton.small-width-button {
     padding: 10px 20px; /* Adjust the padding for left and right sides */
     width: auto; /* Allow the button's width to adjust to the content */
+}
+
+.iframe-container {
+    text-align: center;
+    margin: 0 auto;
 }
 
 footer {

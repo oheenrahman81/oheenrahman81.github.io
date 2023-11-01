@@ -4,12 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const religiousFilter = document.getElementById('religious-filter');
     const sortDropdown = document.getElementById('sort-order');
     const restaurantSearchInput = document.getElementById('restaurant-search');
+    const stateFilter = document.getElementById('state-filter');
+    //const countryFilter = document.getElementById('country-filter')
 
     // Store selected options
     const selectedFilters = {
         cuisine: '',
         religious: '',
         restaurantName: '',
+        state: '',
+        //country: ''
     };
     
     // Add variables for pagination
@@ -33,6 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
         applyFilters(selectedFilters);
     });
 
+    // Listen for changes in the state filter
+    stateFilter.addEventListener('change', function () {
+        selectedFilters.state = stateFilter.value;
+        applyFilters(selectedFilters);
+    });
+
+    // Listen for changes in the country filter
+    //countryFilter.addEventListener('change', function () {
+        //selectedFilters.country = countryFilter.value;
+        //applyFilters(selectedFilters);
+ // });
+
     // Listen for input changes in the search bar
     restaurantSearchInput.addEventListener('input', function () {
         selectedFilters.restaurantName = restaurantSearchInput.value;
@@ -52,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fetch restaurant data and apply filters
     fetchAirtableData(selectedFilters, itemsPerPage);
-    
+
     function fetchAirtableData(selectedFilters, itemsPerPage) {
         const apiKey = 'patDhsVHaMssP2aVE.98b7103d478263587370cf4f3c1cc61fa091bc7245b8fde004327092be767e65';
         const baseId = 'appxoKr26iK85ENqi';
@@ -71,9 +87,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const uniqueCuisines = [...new Set(restaurantData.map(record => record.fields.Cuisine).flat())];
             const uniqueReligiousAllowances = [...new Set(restaurantData.map(record => record.fields['Religious Allowance']))];
+            const uniqueState = [...new Set(restaurantData.map(record => record.fields.State).flat())];
+            //const uniqueCountry = [...new Set(restaurantData.map(record => record.fields.Country).flat())];
+
 
             populateFilterOptions(uniqueCuisines, 'cuisine-filter');
             populateFilterOptions(uniqueReligiousAllowances, 'religious-filter');
+            populateFilterOptions(uniqueState, 'state-filter');
+            //populateFilterOptions(uniqueCountry, 'country-filter');
 
             displayData(restaurantData, currentPage, itemsPerPage);
         })
@@ -110,7 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const cuisineMatch = selectedFilters.cuisine === '' || record.fields.Cuisine.includes(selectedFilters.cuisine);
             const religiousMatch = selectedFilters.religious === '' || record.fields['Religious Allowance'] === selectedFilters.religious;
             const restaurantNameMatch = !selectedFilters.restaurantName || record.fields.Name.toLowerCase().includes(selectedFilters.restaurantName.toLowerCase());
-            return cuisineMatch && religiousMatch && restaurantNameMatch;
+            const stateMatch = selectedFilters.state === '' || record.fields.State === selectedFilters.state;
+            //const countryMatch = selectedFilters.country === '' || record.fields.Country === selectedFilters.country;
+            return cuisineMatch && religiousMatch && restaurantNameMatch && stateMatch; // && countryMatch
         });
     }
 
