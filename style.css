@@ -137,11 +137,25 @@ body {
     color: #5fbd3a;
 }
 
+/* Style for smaller width buttons */
+.small-width-button {
+    padding: 10px 20px; /* Reduce the padding from left and right sides */
+    width: auto; /* Allow the button's width to adjust to the content */
+}
+
+/* Apply the styles to the specific buttons */
+#requestsRedirect.small-width-button,
+#certificationRedirect.small-width-button {
+    padding: 10px 20px; /* Adjust the padding for left and right sides */
+    width: auto; /* Allow the button's width to adjust to the content */
+}
+
 footer {
     background-color: black;
     color: white;
     padding: 20px; /* Adjust padding as needed */
     text-align: center;
+    flex-shrink: 0;
 }
 
 /* Add this CSS for mobile devices */
