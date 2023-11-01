@@ -20,11 +20,39 @@
                     <li><a href="restaurants.html">Restaurants</a></li>
                     <li><a href="requests.html">Requests</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
-            <h1 id="welcome">Welcome!</h1>
-            <p id="message">This site is currently under maintenance. Please check back later.</p>
+            <h1 id="welcome">Welcome to FindMyHalal!</h1>
+<!--            <p id="message">
+                <b>Salam!</b> We're thrilled to have you here. Our website is all about making your dining experiences enjoyable and tailored to your religious dietary needs.
+
+                At FindMyHalal, we understand the struggle of finding restaurants that respects our beliefs. That's why we've handpicked a collection of eateries that offer Halal, Kosher, and Vegetarian options with more on the way. It's our way of making sure you can enjoy the food you love while staying true to your faith.
+                
+                So, no more searching high and low for the perfect restaurant. We've got it all right here, just for you.
+                
+                Finding your faith-friendly dining experience has never been this delightful. 
+            </p> -->
+            <div id="indexRequests">
+                <!-- <img src=""> -->
+                <h2 align="center">
+                    Know a Restaurant?
+                    <div class="button-container">
+                        <button id="requestsRedirect" onclick="window.location.href = 'requests.html'">
+                            <b>Let us know!</b>
+                        </button>
+                    </div>
+                    Want to get certified?
+                    <div class="button-container">
+                        <button id="certificationRedirect" onclick="window.location.href = 'contact.html'">
+                        <b>Fill out a quick form!</b>
+                        </button>
+                    </div>
+                </p>
+            </div>
+        <footer>
+            <h1> This is the footer.</h1>
+            <div id="copyright" align="center">© 2023 - <?php echo date('Y'); ?> FindMyHalal</div>
+        </footer>
     </body>
 </html>

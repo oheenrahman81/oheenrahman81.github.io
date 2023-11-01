@@ -72,7 +72,7 @@ body {
 }
 
 #message {
-    text-align: center;
+    text-align: left;
     font-size: 25px;
 }
 
@@ -121,7 +121,7 @@ body {
 }
 
 /* Visit Now Button Styles */
-.visit-button, .menu-button, .reserve-button, .previous-button, .page-button, .next-button {
+.visit-button, .menu-button, .reserve-button, .previous-button, .page-button, .next-button, #requestsRedirect, #certificationRedirect{
     background-color: black;
     color: #fff;
     padding: 10px 20px;
@@ -133,8 +133,15 @@ body {
     width: 100%; /* Make buttons fill the available width */
 }
 
-.visit-button:hover, .menu-button:hover, .reserve-button:hover, .previous-button:hover, .page-button:hover, .next-button:hover {
+.visit-button:hover, .menu-button:hover, .reserve-button:hover, .previous-button:hover, .page-button:hover, .next-button:hover, #requestsRedirect:hover, #certificationRedirect:hover {
     color: #5fbd3a;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center;
 }
 
 /* Add this CSS for mobile devices */
