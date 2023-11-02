@@ -186,7 +186,7 @@ body {
 footer {
     background-color: black;
     color: white;
-    padding: 20px; /* Adjust padding as needed */
+    padding: 50px; /* Adjust padding as needed */
     text-align: center;
     flex-shrink: 0;
 }
